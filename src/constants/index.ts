@@ -1,0 +1,1 @@
+export const AFTER_IMAGE_DEFAULT_WIDTH = 375;

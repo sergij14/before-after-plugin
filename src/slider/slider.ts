@@ -1,3 +1,4 @@
+import { AFTER_IMAGE_DEFAULT_WIDTH } from "../constants";
 import { IState } from "../models/IState";
 import { getTemplate } from "../utils/getTemplate";
 
@@ -9,7 +10,7 @@ export class Slider {
     this.slider = document.getElementById(selector);
     this.state = {
       ...state,
-      width: state.width || 375,
+      width: state.width || AFTER_IMAGE_DEFAULT_WIDTH,
     };
     this.render(this.state);
     this.listen();
@@ -50,8 +51,6 @@ export class Slider {
     const changedClientX = this.currentClientX - ev.clientX;
     this.currentClientX = ev.clientX;
     const sliderRect = this.slider?.getBoundingClientRect();
-
-    console.log(sliderRect, this.currentClientX);
 
     if (sliderRect) {
       if (sliderRect.right <= this.currentClientX) {
