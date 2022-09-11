@@ -1,4 +1,4 @@
-import { IState } from "../models/IState";
+import { IState } from "../../models/IState";
 
 export const getTemplate = (state: IState) => {
   return `

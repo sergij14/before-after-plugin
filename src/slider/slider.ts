@@ -1,6 +1,6 @@
 import { AFTER_IMAGE_DEFAULT_WIDTH } from "../constants";
 import { IState } from "../models/IState";
-import { getTemplate } from "../utils/getTemplate";
+import { getTemplate } from "./utils/getTemplate";
 
 export class Slider {
   slider: HTMLElement | null;
