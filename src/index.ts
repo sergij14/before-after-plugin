@@ -7,19 +7,38 @@ class Slider {
     this.slider = document.getElementById(selector);
     this.state = state;
     this.render(this.state);
+    this.listen();
   }
 
-  private render(state: string) {
+  private render = (state: string) => {
     if (this.slider) {
       this.slider.innerHTML = getTemplate(state);
     }
-  }
+  };
 
-  moveHandler() {}
+  listen = () => {
+    this.slider?.addEventListener("mousedown", this.mouseDownHandler);
+    this.slider?.addEventListener("mouseup", this.mouseUpHandler);
+  };
 
-  mouseUpHandler() {}
+  mouseDownHandler = (ev: Event) => {
+    console.log('downnadler');
 
-  mouseDownHandler() {}
+    if ((ev.target as HTMLElement)?.dataset.type === "resize") {
+      this.slider?.addEventListener("mousemove", this.moveHandler);
+    }
+  };
+
+  mouseUpHandler = () => {
+    console.log('uphnadler');
+
+    this.slider?.removeEventListener("mousemove", this.moveHandler);
+  };
+
+  moveHandler = () => {
+    console.log('movehnadler');
+    
+  };
 }
 
 const slider = new Slider("slider", "");
