@@ -1,0 +1,41 @@
+.slider {
+  height: $SLIDER_HEIGHT;
+  width: $SLIDER_WIDTH;
+  background: lightgray;
+  position: relative;
+
+  &__before {
+    @include slider-image;
+    background: url(../assets/before.jpg) no-repeat;
+    z-index: 2;
+    width: 100%;
+  }
+
+  &__after {
+    @include slider-image;
+    background: url(../assets/after.jpg) no-repeat;
+    z-index: 3;
+    width: 50%;
+  }
+
+  &__resize {
+    width: 5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: black;
+    color: black;
+    &:before {
+      @include resize-arrow;
+      content: "<";
+      right: 5px;
+    }
+
+    &:after {
+      @include resize-arrow;
+      content: ">";
+      left: 5px;
+    }
+  }
+}

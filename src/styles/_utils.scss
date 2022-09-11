@@ -1,0 +1,12 @@
+@mixin slider-image {
+  position: absolute;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+@mixin resize-arrow {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 900;
+  top: 50%;
+}
