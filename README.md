@@ -1,3 +1,3 @@
 # Before/After plugin
 
-Before/After image plugin built with vanilla TypeScript & OOP.
+Before/After image plugin built with vanilla TypeScript.
